@@ -2,8 +2,8 @@
 
 use AdventureWorks2019
 
-select ProductID from Production.Product a
-where not exists (
-select ProductID from Production.TransactionHistoryArchive b
-where a.ProductID = b.ProductID
-)
+SELECT ProductID
+FROM Production.Product
+EXCEPT
+SELECT ProductID
+FROM Production. TransactionHistoryArchive
